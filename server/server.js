@@ -5,10 +5,12 @@ import session from "express-session";
 import passport from "passport";
 import "./passport.js";
 import authRoutes from "./routes/auth.js";
+import dotenv from "dotenv";
 
 const app = express();
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 app.use(express.json());
+dotenv.config();
 
 app.use(session({
   secret: "mysecret",
